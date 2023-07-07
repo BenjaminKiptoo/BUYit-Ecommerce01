@@ -9,6 +9,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <!------- Font awesome link ----------->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-----------CSS file ------------>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
         <!---------navbar-------->
@@ -16,7 +18,7 @@
             <!--------- first child --------->
             <nav class="navbar navbar-expand-lg bg-info">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Logo</a>
+    <img src="online-shop.png" alt="" class="logo">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -49,18 +51,36 @@
     </div>
   </div>
 </nav>
-<!--------------last child -------------
-<div class="bg-info p-3 text-center">
-        <p>All rights reserved.  Designed by Benjamin-2023 </p>
-    </div> -------->
-        </div>
 
+<!-------------second child--------------->
+<nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+  <ul class="navbar-nav me-auto">
+    <li class="nav-item">
+      <a href="#" class="nav-link">Welcome Guest</a>
+    </li>
+    <li class="nav-item">
+      <a href="#" class="nav-link">Login</a>
+    </li>
+  </ul>
+</nav>
+
+
+
+
+
+
+<!--------------last child -------------
+    <div class="bg-info p-3 text-center">
+        <p>All rights reserved.  Designed by Benjamin-2023 </p>
+    </div>
+    ---->
+        </div>
+        
 
 
 
 
     
-
 
 
     <!------------Bootsrap JS link ------------->
