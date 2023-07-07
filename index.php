@@ -140,10 +140,57 @@
 </div>
       </div>
     </div>
+
   </div>
-  <div class="col-md-2">
+
   <!--- sidenav ------>
-  
+  <div class="col-md-2 bg-secondary p-0">
+    <!---------Brands to be displayed --------->
+    <ul class="navbar-nav me-auto text-center">
+      <li class="nav-item bg-info">
+        <a href="#" class="nav-link text-light"><h4>Delivery brands</h4></a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link text-light">Brand 1</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link text-light">Brand 2</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link text-light">Brand 3</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link text-light">Brand 4</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link text-light">Brand 5</a>
+      </li>
+    </ul>
+
+
+    <!---------Categories to be displayed ---------->
+    <ul class="navbar-nav me-auto text-center">
+      <li class="nav-item bg-info">
+        <a href="#" class="nav-link text-light"><h4>Categories</h4></a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link text-light">Categories 1</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link text-light">Categories 2</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link text-light">Categories 3</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link text-light">Categories 4</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link text-light">Categories 5</a>
+      </li>
+    </ul>
+
+
   </div>
 </div>
 
