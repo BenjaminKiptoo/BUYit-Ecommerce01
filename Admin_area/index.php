@@ -70,7 +70,16 @@
             </div>
         </div>
 
-        <!--------------last child ------------->
+        <!----------- forth child ------------>
+        <div class="container my-5">
+            <?php
+            if (isset($_GET['insert_category'])) {
+                include('insert_categories.php');
+            }
+            ?>
+        </div>
+
+        <!-------------last child ------------->
     <div class="bg-info p-3 text-center footer">
         <p>All rights reserved.  Designed by Benjamin-2023 </p>
     </div>
