@@ -50,7 +50,7 @@ include('functions/common_function.php');
         </li>
         
       </ul>
-      <form class="d-flex" action="search_product.php" method="get">
+      <form class="d-flex" action="" method="get">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search_data">
       <input type="submit" value="Search" class="btn btn-outline-light" name="search_data_product">
       </form>
@@ -85,7 +85,7 @@ include('functions/common_function.php');
       <!--------- fetching products ------------>
       <?php
       // calling function
-      getproducts();
+      search_product();
       get_unique_categories();
       get_unique_brands();
     
