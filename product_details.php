@@ -2,6 +2,7 @@
 <?php
 include('includes/connect.php');
 include('functions/common_function.php');
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -61,6 +62,7 @@ include('functions/common_function.php');
 <?php
 cart();
 ?>
+
 <!-------------second child--------------->
 <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
   <ul class="navbar-nav me-auto">
@@ -85,14 +87,14 @@ cart();
   <div class="col-md-10">
   <!--- products ------>
     <div class="row">
+        
+
       <!--------- fetching products ------------>
       <?php
       // calling function
-      getproducts();
+      view_details();
       get_unique_categories();
       get_unique_brands();
-      // $ip = getIPAddress();  
-     //  echo 'User Real IP Address - '.$ip;
     
       ?>
       <!--------- row end --------->
