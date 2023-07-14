@@ -42,11 +42,12 @@ include('functions/common_function.php');
           <a class="nav-link" href="#">Contact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i><sup><?php
+          <a class="nav-link" href="cart.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i><sup><?php
           cart_item(); ?></sup></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Total Price: 100/-</a>
+          <a class="nav-link" href="#">Total Price: <?php total_cart_price();
+          ?>/-</a>
         </li>
         
       </ul>
