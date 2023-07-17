@@ -2,7 +2,7 @@
 <?php
 include('includes/connect.php');
 include('functions/common_function.php');
-
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,6 +17,11 @@ include('functions/common_function.php');
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-----------CSS file ------------>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body{
+            overflow-x:hidden;
+        }
+    </style>
 </head>
 <body>
         <!---------navbar-------->
@@ -37,13 +42,13 @@ include('functions/common_function.php');
           <a class="nav-link" href="display_all.php">Products</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Register</a>
+          <a class="nav-link" href="./users_area/user_registration.php">Register</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Contact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i><sup><?php
+          <a class="nav-link" href="cart.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i><sup><?php
           cart_item(); ?></sup></a>
         </li>
         <li class="nav-item">
@@ -71,9 +76,13 @@ cart();
     <li class="nav-item">
       <a href="#" class="nav-link">Welcome Guest</a>
     </li>
-    <li class="nav-item">
-      <a href="#" class="nav-link">Login</a>
-    </li>
+    <?php
+if (!isset($_SESSION['username'])) {
+  echo "<li class='nav-item'><a class='nav-link' href='./users_area/user_login.php'>Login</a></li>";
+}else {
+  echo "<li class='nav-item'><a class='nav-link' href='./users_area/logout.php'>Logout</a></li>";
+}
+    ?>
   </ul>
 </nav>
 

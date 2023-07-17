@@ -2,6 +2,7 @@
 <?php
 include('includes/connect.php');
 include('functions/common_function.php');
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,7 +44,7 @@ include('functions/common_function.php');
           <a class="nav-link" href="display_all.php">Products</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Register</a>
+          <a class="nav-link" href="./users_area/user_registration.php">Register</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Contact</a>
@@ -68,9 +69,13 @@ cart();
     <li class="nav-item">
       <a href="#" class="nav-link">Welcome Guest</a>
     </li>
-    <li class="nav-item">
-      <a href="#" class="nav-link">Login</a>
-    </li>
+    <?php
+if (!isset($_SESSION['username'])) {
+  echo "<li class='nav-item'><a class='nav-link' href='./users_area/user_login.php'>Login</a></li>";
+}else {
+  echo "<li class='nav-item'><a class='nav-link' href='./users_area/logout.php'>Logout</a></li>";
+}
+    ?>
   </ul>
 </nav>
 
@@ -176,7 +181,7 @@ $result_count=mysqli_num_rows($result);
 if ($result_count>0) {
   echo "<h4 class='px-3'>Subtotal:<strong class='text-info'> $total_price/-</strong></h4>
   <input type='submit' value='Continue Shopping' class='bg-info px-3 py-2 border-0 mx-3' name='continue_shopping'>
-  <a href=''><button class='bg-secondary p-3 py-2 border-0 text-light'>Checkout</button></a>";
+  <button class='bg-secondary p-3 py-2 border-0'><a href='./users_area/checkout.php' class='text-light text-decoration-none'>Checkout</a></button>";
 }else {
   echo "<input type='submit' value='Continue Shopping' class='bg-info px-3 py-2 border-0 mx-3' name='continue_shopping'>";
 }
