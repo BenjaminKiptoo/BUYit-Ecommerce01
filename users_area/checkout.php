@@ -17,7 +17,7 @@ session_start();
     <!------- Font awesome link ----------->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-----------CSS file ------------>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
         <!---------navbar-------->
@@ -25,20 +25,20 @@ session_start();
             <!--------- first child --------->
             <nav class="navbar navbar-expand-lg bg-info">
   <div class="container-fluid">
-    <img src="online-shop.png" alt="" class="logo">
+    <img src="../images/online-shop.png" alt="" class="logo">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+          <a class="nav-link active" aria-current="page" href="../index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="display_all.php">Products</a>
+          <a class="nav-link" href="../display_all.php">Products</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Register</a>
+          <a class="nav-link" href="user_registration.php">Register</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Contact</a>
@@ -57,10 +57,15 @@ session_start();
 <!-------------second child--------------->
 <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
   <ul class="navbar-nav me-auto">
-    <li class="nav-item">
-      <a href="#" class="nav-link">Welcome Guest</a>
-    </li>
+    
     <?php
+    if (!isset($_SESSION['username'])) {
+      echo "<li class='nav-item'>
+        <a href='#' class='nav-link'>Welcome Guest</a>
+      </li>";
+  }else {
+    echo "<li class='nav-item'><a class='nav-link' href='#'>Welcome ".$_SESSION['username']."</a></li>";
+  }
 if (!isset($_SESSION['username'])) {
   echo "<li class='nav-item'><a class='nav-link' href='./user_login.php'>Login</a></li>";
 }else {
