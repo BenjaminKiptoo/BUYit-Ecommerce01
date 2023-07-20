@@ -25,7 +25,7 @@ session_start();
             width: 90%;
             margin: auto;
             display: block;
-            /* height: 100%; */
+            height: 100%;
             object-fit:contain;
         }
         
@@ -100,8 +100,8 @@ if (!isset($_SESSION['username'])) {
 
 <!--------------Third child -------------->
 <div class="bg-light">
-  <h3 class="text-center">Hidden store</h3>
-  <p class="text-center">Communication is at the heart of e-commerce and community</p>
+  <h3 class="text-center">BUYit</h3>
+  <p class="text-center">You need it? We got it</p>
 </div>
 
 <!-- forth child -->
@@ -112,16 +112,16 @@ if (!isset($_SESSION['username'])) {
           <a class="nav-link text-light" href="#"><h4>Your profile</h4></a>
         </li>
         <?php
-$username=$_SESSION['username'];
-$user_image="select * from `user_table` where username='$username'";
-$user_image=mysqli_query($con,$user_image);
-$row_image=mysqli_fetch_array($user_image);
-$user_image=$row_image['user_image'];
-echo "<li class='nav-item'>
-<img src='./user_images/$user_image' alt='' class='profile_img my-4'>
-</li>";
+            $username=$_SESSION['username'];
+            $user_image="select * from `user_table` where username='$username'";
+            $user_image=mysqli_query($con,$user_image);
+            $row_image=mysqli_fetch_array($user_image);
+            $user_image=$row_image['user_image'];
+            echo "<li class='nav-item'>
+            <img src='./user_images/$user_image' alt='' class='profile_img my-4'>
+            </li>";
 
-?>
+        ?>
         
         <li class="nav-item">
           <a class="nav-link text-light" href="profile.php">Pending Orders</a>
@@ -140,7 +140,14 @@ echo "<li class='nav-item'>
         </li>
         </ul>
     </div>
-    <div class="col-md-10"></div>
+    <div class="col-md-10">
+        <?php get_user_order_details(); 
+        if (isset($_GET['my_orders'])) {
+          include('user_orders.php');
+        }
+        ?>
+    </div>
+
 
 </div>
 
