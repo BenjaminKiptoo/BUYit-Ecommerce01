@@ -1,3 +1,9 @@
+<?php
+    ini_set('display_errors', 1);
+    error_reporting(E_ALL);
+    include('../includes/connect.php');
+    session_start();
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,9 +40,19 @@
                 <img src="../online-shop.png" alt="" class="logo">
                 <nav class="navbar navbar-expand-lg">
                     <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">Welcome guest</a>
-                        </li>
+                        <?php
+                        if (!isset($_SESSION['username'])) {
+                            echo "<li class='nav-item'>
+                            <a href='#' class='nav-link'>Welcome guest</a>
+                        </li>";
+                        }else {
+                            echo "<li class='nav-item'>
+                            <a href='#' class='nav-link'>Welcome ".$_SESSION['username']."</a>
+                        </li>";
+                        }
+
+                        ?>
+                        
                     </ul>
                 </nav>
             </div>
@@ -62,9 +78,9 @@
                     <button><a href="" class="nav-link text-light bg-info my-1">View Categories</a></button>
                     <button><a href="index.php?insert_brand" class="nav-link text-light bg-info my-1">Insert Brands</a></button>
                     <button><a href="" class="nav-link text-light bg-info my-1">View Brands</a></button>
-                    <button><a href="" class="nav-link text-light bg-info my-1">All Orders</a></button>
-                    <button><a href="" class="nav-link text-light bg-info my-1">All Payments</a></button>
-                    <button><a href="" class="nav-link text-light bg-info my-1">List Users</a></button>
+                    <button><a href="index.php?list_orders" class="nav-link text-light bg-info my-1">All Orders</a></button>
+                    <button><a href="index.php?list_payments" class="nav-link text-light bg-info my-1">All Payments</a></button>
+                    <button><a href="index.php?list_users" class="nav-link text-light bg-info my-1">List Users</a></button>
                     <button><a href="" class="nav-link text-light bg-info my-1">Logout</a></button>
                 </div>
             </div>
@@ -78,6 +94,15 @@
             }
             if (isset($_GET['insert_brand'])) {
                 include('insert_brands.php');
+            }
+            if (isset($_GET['list_orders'])) {
+                include('list_orders.php');
+            }
+            if (isset($_GET['list_payments'])) {
+                include('list_payments.php');
+            }
+            if (isset($_GET['list_users'])) {
+                include('list_users.php');
             }
             ?>
         </div>
