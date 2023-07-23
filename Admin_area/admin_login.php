@@ -1,6 +1,12 @@
-<?php include('../includes/connect.php'); 
+<?php 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+@session_start();
+include('../includes/connect.php'); 
 include('../functions/common_function.php');
-session_start();
+
 ?>
 
 <!DOCTYPE html>
@@ -44,6 +50,9 @@ session_start();
 </html>
 
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 if (isset($_POST['admin_login'])) {
     $admin_name=$_POST['admin_name'];
@@ -69,5 +78,3 @@ if (isset($_POST['admin_login'])) {
         echo "<script>alert('Invalid Credentials')</script>";
     }
 }
-
-?>

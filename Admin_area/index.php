@@ -41,15 +41,20 @@
                 <nav class="navbar navbar-expand-lg">
                     <ul class="navbar-nav">
                         <?php
-                        if (!isset($_SESSION['username'])) {
+                        if (!isset($_SESSION['admin_name'])) {
                             echo "<li class='nav-item'>
                             <a href='#' class='nav-link'>Welcome guest</a>
                         </li>";
                         }else {
                             echo "<li class='nav-item'>
-                            <a href='#' class='nav-link'>Welcome ".$_SESSION['username']."</a>
+                            <a href='#' class='nav-link'>Welcome ".$_SESSION['admin_name']."</a>
                         </li>";
-                        }
+                        }if (!isset($_SESSION['admin_name'])) {
+                            echo "<li class='nav-item'><a class='nav-link' href='admin_login.php'>Login</a></li>";
+                          }else {
+                            echo "<li class='nav-item'><a class='nav-link' href='admin_logout.php'>Logout</a></li>";
+                          }
+                        
 
                         ?>
                         
@@ -69,7 +74,16 @@
             <div class="col-md-12 bg-secondary p-1 d-flex align-items-center">
                 <div class="p-5">
                     <a href="#"><img src="../Apple.png" alt="" class="admin_image"></a>
-                    <p class="text-light text-center">Admin Name</p>
+                    <!-- <p class="text-light text-center">Admin Name</p> -->
+                    <p>
+                    <?php
+                        if (!isset($_SESSION['admin_name'])) {
+                            echo " <p class='nav-link'>Admin name</p>";
+                        }else {
+                            echo "<p>".$_SESSION['admin_name']."</p>";
+                        }
+                    ?>
+                    </p>
                 </div>
                 <div class="button text-center">
                     <button class="my-3"><a href="insert_product.php" class="nav-link text-light bg-info my-1">Insert Products</a></button>
@@ -81,7 +95,7 @@
                     <button><a href="index.php?list_orders" class="nav-link text-light bg-info my-1">All Orders</a></button>
                     <button><a href="index.php?list_payments" class="nav-link text-light bg-info my-1">All Payments</a></button>
                     <button><a href="index.php?list_users" class="nav-link text-light bg-info my-1">List Users</a></button>
-                    <button><a href="" class="nav-link text-light bg-info my-1">Logout</a></button>
+                    <button><a href="admin_logout.php" class="nav-link text-light bg-info my-1">Logout</a></button>
                 </div>
             </div>
         </div>

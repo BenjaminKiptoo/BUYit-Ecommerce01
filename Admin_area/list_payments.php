@@ -6,6 +6,9 @@
     ini_set('display_errors', 1);
     error_reporting(E_ALL);
     include('../includes/connect.php');
+    if (!isset($_SESSION['admin_name'])) {
+        echo "<script>window.open('admin_login.php','_self')</script>";
+      }if (isset($_SESSION['admin_name'])) {
 
 $get_payments="select * from `user_payments`";
 $result=mysqli_query($con,$get_payments);
@@ -43,6 +46,7 @@ if ($row_count==0) {
         <td><a href=''>Delete</a></td>
     </tr>";
     }
+}
 }
 
 ?>

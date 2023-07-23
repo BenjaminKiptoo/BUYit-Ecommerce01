@@ -6,6 +6,9 @@
     ini_set('display_errors', 1);
     error_reporting(E_ALL);
     include('../includes/connect.php');
+    if (!isset($_SESSION['admin_name'])) {
+        echo "<script>window.open('admin_login.php','_self')</script>";
+      } else if (isset($_SESSION['admin_name'])) {
 
 $get_orders="select * from `user_orders`";
 $result=mysqli_query($con,$get_orders);
@@ -47,7 +50,7 @@ if ($row_count==0) {
     </tr>";
     }
 }
-
+}
 ?>
         
         

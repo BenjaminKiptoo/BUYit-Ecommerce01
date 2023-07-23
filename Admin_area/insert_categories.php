@@ -1,5 +1,9 @@
 <?php
 include('../includes/connect.php');
+if (!isset($_SESSION['admin_name'])) {
+  echo "<script>window.open('admin_login.php','_self')</script>";
+} else if (isset($_SESSION['admin_name'])) {
+  
 if (isset($_POST['insert_cat'])) {
   $category_title=$_POST['cat_title'];
 
@@ -18,6 +22,7 @@ if (isset($_POST['insert_cat'])) {
     echo "<script>alert('category has been inserted sucessfully')</script>";
   }
 
+}
 }
 }
 
