@@ -104,7 +104,7 @@ if (!isset($_SESSION['username'])) {
 <!--------------Third child -------------->
 <div class="bg-light">
   <h3 class="text-center">BUYit</h3>
-  <p class="text-center">Communication is at the heart of e-commerce and community</p>
+  <p class="text-center">You need it? We got it</p>
 </div>
 
 
